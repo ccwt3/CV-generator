@@ -1,6 +1,14 @@
-//! I need to return a list of jobs in order to render them if more
-//! PLUS i need to return a diferent list for the experience list
+function ListFragment(bulletList) {
+  bulletList = bulletList.data
 
+  return (
+    <>
+      {
+        bulletList.map(point => <li>{point}</li>)
+      }
+    </>
+  )
+}
 
 function JobFragment(e) {
   e = e.data
@@ -20,7 +28,7 @@ function JobFragment(e) {
       </div>
     
       <ul className="experience__list">
-        <li>e</li>
+        <ListFragment data={e.bullet} />
       </ul>
     </>
   )

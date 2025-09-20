@@ -37,8 +37,7 @@ function App() {
       period: 'September 2025 - September 2025',
 
       bullet: [
-        'This project was an assigment by TheOdinProject',
-        'This project helped me learn react components and how to structure data in a good way'
+        'Damn mami i just wanna tun tuku tun, gotcha tun tuku tun',
       ]
     }
   ])
