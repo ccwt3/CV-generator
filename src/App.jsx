@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "./styles/experience.css"
 import HeaderInfo from "./components/header";
 import Experience from "./components/experience";
 import Education from "./components/education";
@@ -20,6 +21,17 @@ function App() {
   const [experience, setExperience] = useState([
     {
       company: 'CV creator',
+      position: 'Solo developer',
+      place: 'México',
+      period: 'September 2025 - September 2025',
+
+      bullet: [
+        'This project was an assigment by TheOdinProject',
+        'This project helped me learn react components and how to structure data in a good way'
+      ]
+    },
+    {
+      company: 'CV Sexo',
       position: 'Solo developer',
       place: 'México',
       period: 'September 2025 - September 2025',
