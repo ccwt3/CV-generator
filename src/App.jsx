@@ -1,6 +1,9 @@
 import { useState } from "react";
+// estilos
 import "./App.css";
 import "./styles/experience.css"
+import "./styles/education.css"
+// componentes
 import HeaderInfo from "./components/header";
 import Experience from "./components/experience";
 import Education from "./components/education";
@@ -46,11 +49,11 @@ function App() {
     {
       institution: 'TecNM',
       place: 'Mexico',
-      carreer: 'Software Engineering',
+      major: 'Software Engineering',
       gen: 'Currently studing',
       
       certifications: [
-        'Excel certification'
+        'Excel certification', 'coso'
       ]
     }
   ])

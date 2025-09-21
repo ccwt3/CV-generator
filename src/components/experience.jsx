@@ -1,5 +1,5 @@
 function ListFragment(bulletList) {
-  bulletList = bulletList.data
+  bulletList = bulletList.data;
 
   return (
     <>
@@ -11,7 +11,7 @@ function ListFragment(bulletList) {
 }
 
 function JobFragment(e) {
-  e = e.data
+  e = e.data;
   
   return (
     <>
@@ -37,6 +37,7 @@ function JobFragment(e) {
 export default function Experience( {data} ) {
   return (
     <div className="job_experience">
+      <h2>Job experience</h2>
       {
         data.map(job => <JobFragment data={job} />)
       }
