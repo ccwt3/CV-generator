@@ -7,6 +7,7 @@ import "./styles/education.css"
 import HeaderInfo from "./components/header";
 import Experience from "./components/experience";
 import Education from "./components/education";
+import Skills from "./components/skills";
 
 function App() {
   const [headerData, setHeaderData] = useState(
@@ -71,6 +72,7 @@ function App() {
       <HeaderInfo data={headerData} />
       <Experience data={experience} />
       <Education data={education} />
+      <Skills data={skills} />
     </>
   );
 }
