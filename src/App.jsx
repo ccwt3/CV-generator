@@ -1,13 +1,14 @@
 import { useState } from "react";
-// estilos
+// styles
 import "./App.css";
 import "./styles/experience.css"
 import "./styles/education.css"
-// componentes
+// components
 import HeaderInfo from "./components/header";
 import Experience from "./components/experience";
 import Education from "./components/education";
 import Skills from "./components/skills";
+import AllTheInputs from "./components/inputs";
 
 function App() {
   const [headerData, setHeaderData] = useState(
@@ -24,51 +25,93 @@ function App() {
 
   const [experience, setExperience] = useState([
     {
+      key: crypto.randomUUID(),
       company: 'CV creator',
       position: 'Solo developer',
       place: 'México',
       period: 'September 2025 - September 2025',
 
       bullet: [
-        'This project was an assigment by TheOdinProject',
-        'This project helped me learn react components and how to structure data in a good way'
+        {
+          key: crypto.randomUUID(),
+          text: 'This project was an assigment by TheOdinProject'
+        },
+        {
+          key: crypto.randomUUID(),
+          text: 'This project helped me learn how structure things'
+        }
       ]
     },
     {
+      key: crypto.randomUUID(),
       company: 'CV Sexo',
       position: 'Solo developer',
       place: 'México',
       period: 'September 2025 - September 2025',
 
       bullet: [
-        'Damn mami i just wanna tun tuku tun, gotcha tun tuku tun',
+        {
+          key: crypto.randomUUID(),
+          text: 'Damn mami'
+        }
       ]
     }
   ])
 
   const [education, setEducation] = useState([
     {
+      key: crypto.randomUUID(),
       institution: 'TecNM',
       place: 'Mexico',
       major: 'Software Engineering',
       gen: 'Currently studing',
       
       certifications: [
-        'Excel certification', 'coso'
+        {
+          key: crypto.randomUUID(),
+          text: 'Excel certificate'
+        },
+        {
+          key: crypto.randomUUID(),
+          text: 'Another certificate'
+        }
       ]
     }
   ])
 
   const [skills, setSkills] = useState(
     [
-      'Native Spanish speaker, C1 English level and A2 at Greek',
-      '1200 ELO at chess.com',
-      'Poker player'
+      {
+        key: crypto.randomUUID(),
+        text: 'Native Spanish speaker, C1 English level and A2 at Greek'
+      },
+      {
+        key: crypto.randomUUID(),
+        text: '1200 ELO at chess.com'
+      },
+      {
+        key: crypto.randomUUID(),
+        text: 'Poker player'
+      }
     ]
   )
 
   return (
     <>
+      <AllTheInputs 
+        setHeader={setHeaderData}
+        headerData={headerData}  
+
+        setExperience={setExperience}
+        experienceData={experience}
+
+        setEducation={setEducation}
+        educationData={education}
+
+        setSkills={setSkills}
+        skillsData={skills}
+      />
+
       <HeaderInfo data={headerData} />
       <Experience data={experience} />
       <Education data={education} />

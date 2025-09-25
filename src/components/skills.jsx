@@ -11,7 +11,7 @@ export default function Skills ( {data} ) {
       <h2>Extra skills</h2>
       <ul>
         {
-          data.map(e => <List data={e} />)
+          data.map(e => <List key={e.key} data={e.text} />)
         }
       </ul>
     </div>

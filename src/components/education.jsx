@@ -4,7 +4,7 @@ function ListFragment(bulletList) {
   return (
     <>
       {
-        bulletList.map(point => <li>{point}</li>)
+        bulletList.map(point => <li key={point.key}>{point.text}</li>)
       }
     </>
   )
@@ -41,7 +41,7 @@ export default function Education( {data} ) {
     <div className="education">
       <h2>Education</h2>
       {
-        data.map(school => <SchoolFragment data={school} />)
+        data.map(school => <SchoolFragment data={school} key={school.key}/>)
       }
     </div>
   )

@@ -8,7 +8,7 @@ export default function HeaderInfo({data}) {
         <p>{data.direction}</p>
         <a>{data.linkedIn}</a>
         <p>{data.phone}</p>
-        <p>{data.emai}</p>
+        <p>{data.email}</p>
       </div>
 
       <p className="header__description">{data.description}</p>
