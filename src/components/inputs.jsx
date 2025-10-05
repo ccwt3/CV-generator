@@ -21,6 +21,7 @@ export default function AllTheInputs(
 
   //* Toma el id del input y utiliza un parametro de setExperience que es el valor previo, lo itera y compara el id de los elementos, lo encuentra y simplemente cambia el valor que le pedimos
   //! buscar la manera de poder replicar el input para los demas
+
   function changeExperience(event, id) {
     setExperience(prev => prev.map(exp =>
         exp.key === id 
@@ -43,6 +44,41 @@ export default function AllTheInputs(
               return bul;
             }
           })
+        };
+      }
+      else {
+        return exp;
+      }
+    }));
+  }
+
+  function addExperience(e) {
+    setExperience(prev => [
+      ...prev,
+      {
+        key: crypto.randomUUID(),
+        company: 'Add info',
+        position: '',
+        place: '',
+        period: '',
+  
+        bullet: [],
+      }
+    ]);
+  }
+
+  function addBullet(id) {
+    setExperience(prev => prev.map(exp => {
+      if (exp.key === id) {
+        return {
+          ...exp,
+          bullet: [
+            ...exp.bullet,
+            {
+              key: crypto.randomUUID(),
+              text: 'set info',
+            }
+          ]
         };
       }
       else {
@@ -94,6 +130,10 @@ export default function AllTheInputs(
         )}
       />
 
+      <h3>Seccion boton de prueba</h3>
+      <button onClick={addExperience}>Agregar Experiencia</button>
+      
+      <button onClick={e => addBullet(experienceData[0].key)}>Agregar bullet</button>
     </>
   )
 }
