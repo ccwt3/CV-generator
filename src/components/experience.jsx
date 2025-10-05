@@ -35,8 +35,6 @@ function JobFragment(e) {
 }
 
 export default function Experience( {data} ) {
-  console.log('-----------')
-  console.log('renderizado', data);
   return (
     <div className="job_experience">
       <h2>Job experience</h2>
