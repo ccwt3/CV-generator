@@ -96,7 +96,9 @@ export default function AllTheInputs(
       
       <h3>Apartado de trabajo</h3>
       
-      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData}/>
+      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData} idx={0}/>
+      <h3>Inputs del segundo</h3>
+      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData} idx={1}/>
 
       <h3>Seccion boton de prueba</h3>
       <button onClick={addExperience}>Agregar Experiencia</button>
