@@ -1,3 +1,6 @@
+import HeaderInputs from "./input_components/headerInputs";
+import JobInputs from "./input_components/jobInputs";
+
 export default function AllTheInputs(
   {
     setHeader,
@@ -89,50 +92,14 @@ export default function AllTheInputs(
 
   return (
     <>
-      <input type="text" name="name" onChange={changeHeader}/>
-      <input type="text" name="direction" onChange={changeHeader}/>
-      <input type="text" name="linkedIn" onChange={changeHeader}/>
-      <input type="text" name="phone" onChange={changeHeader}/>
-      <input type="text" name="email" onChange={changeHeader}/>
-      <input type="text" name="description" onChange={changeHeader}/>
-
+      <HeaderInputs changeHeader={changeHeader}/>
+      
       <h3>Apartado de trabajo</h3>
-
-      <input type="text" name="company" onChange={e => 
-        changeExperience(e, experienceData[0].key)
-      }/>
       
-      <input type="text" name="position" onChange={e => 
-        changeExperience(e, experienceData[0].key)}
-      />
-      
-      <input type="text" name="place" onChange={e => 
-        changeExperience(e, experienceData[0].key)}
-      />
-      
-      <input type="text" name="period" onChange={e => 
-        changeExperience(e, experienceData[0].key)}
-      />
-
-      <input type="text" name="bullet" onChange={e =>
-         changeExperienceBullet(
-          e, 
-          experienceData[0].key, 
-          experienceData[0].bullet[0].key
-        )}
-      />
-
-      <input type="text" name="bullet" onChange={e =>
-         changeExperienceBullet(
-          e, 
-          experienceData[0].key, 
-          experienceData[0].bullet[1].key
-        )}
-      />
+      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData}/>
 
       <h3>Seccion boton de prueba</h3>
       <button onClick={addExperience}>Agregar Experiencia</button>
-      
       <button onClick={e => addBullet(experienceData[0].key)}>Agregar bullet</button>
     </>
   )
