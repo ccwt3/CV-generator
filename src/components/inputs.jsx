@@ -96,13 +96,22 @@ export default function AllTheInputs(
       
       <h3>Apartado de trabajo</h3>
       
-      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData} idx={0}/>
-      <h3>Inputs del segundo</h3>
-      <JobInputs changeData={changeExperience} changeBullet={changeExperienceBullet} data={experienceData} idx={1}/>
+      {experienceData.map((e, i) => (
+        <div key={e.key}>
+          <h3>Experience #{i + 1}</h3>
+          <JobInputs 
+            changeData={changeExperience} 
+            changeBullet={changeExperienceBullet} 
+            data={experienceData} idx={i}
+          />
+
+          <button onClick={e => addBullet(experienceData[i].key)}>Agregar bullet</button>
+
+        </div>
+      ))}
 
       <h3>Seccion boton de prueba</h3>
       <button onClick={addExperience}>Agregar Experiencia</button>
-      <button onClick={e => addBullet(experienceData[0].key)}>Agregar bullet</button>
     </>
   )
 }
