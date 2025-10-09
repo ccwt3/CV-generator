@@ -1,4 +1,4 @@
-function RenderingInputs({ changer, data, generalID }) {
+function RenderingInputs({ changer, data, generalID, set }) {
   const certification = data[generalID]?.certifications ?? [];
   
   return certification.map(cert => {
@@ -8,24 +8,24 @@ function RenderingInputs({ changer, data, generalID }) {
         type="text"
         name="certifications"
         placeholder="Dinamicos"
-        onChange={e => changer(e, data[generalID].key, cert.key)}
+        onChange={e => changer(e, data[generalID].key, cert.key, set)}
       />
     )
   });
 }
 
-export default function EducationInputs( {changeData, changeBullet, data, idx} ) {
+export default function EducationInputs( {changeData, changeBullet, data, idx, setter} ) {
   return (
     <>
-      <input type="text" name="institution" onChange={e => changeData(e, data[idx].key)} />
+      <input type="text" name="institution" onChange={e => changeData(e, data[idx].key, setter)} />
       
-      <input type="text" name="place" onChange={e => changeData(e, data[idx].key)} />
+      <input type="text" name="place" onChange={e => changeData(e, data[idx].key, setter)} />
       
-      <input type="text" name="major" onChange={e => changeData(e, data[idx].key)} />
+      <input type="text" name="major" onChange={e => changeData(e, data[idx].key, setter)} />
       
-      <input type="text" name="gen" onChange={e => changeData(e, data[idx].key)} />
+      <input type="text" name="gen" onChange={e => changeData(e, data[idx].key, setter)} />
 
-      <RenderingInputs changer={changeBullet} data={data} generalID={idx}/>
+      <RenderingInputs changer={changeBullet} data={data} generalID={idx} set={setter}/>
     </>
   )
 }
