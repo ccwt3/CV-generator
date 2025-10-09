@@ -1,5 +1,6 @@
 import HeaderInputs from "./input_components/headerInputs";
 import JobInputs from "./input_components/jobInputs";
+import EducationInputs from "./input_components/educationInputs";
 
 export default function AllTheInputs(
   {
@@ -90,15 +91,83 @@ export default function AllTheInputs(
     }));
   }
 
+  // -------------------------
+  function changeEducation(event, id) {
+    setEducation(prev => prev.map(exp =>
+        exp.key === id 
+        ? {...exp, [event.target.name]: event.target.value}
+        : exp
+      )
+    );
+  }
+
+  function changeEducationBullet(event, id, bulletID) {
+    setEducation(prev => prev.map(exp => {
+      if (exp.key === id) {
+        return {
+          ...exp,
+          certifications: exp.certifications.map(bul => {
+            if (bul.key === bulletID) {
+              return {...bul, text: event.target.value}
+            }
+            else {
+              return bul;
+            }
+          })
+        };
+      }
+      else {
+        return exp;
+      }
+    }));
+  }
+
+  function addEducation(e) {
+    setEducation(prev => [
+      ...prev,
+      {
+        key: crypto.randomUUID(),
+        institution: 'Add info',
+        place: '',
+        major: '',
+        gen: '',
+  
+        certifications: [],
+      }
+    ]);
+  }
+
+  function addEducationBullet(id) {
+    setEducation(prev => prev.map(exp => {
+      if (exp.key === id) {
+        return {
+          ...exp,
+          certifications: [
+            ...exp.certifications,
+            {
+              key: crypto.randomUUID(),
+              text: 'set info',
+            }
+          ]
+        };
+      }
+      else {
+        return exp;
+      }
+    }));
+  }
+
   return (
     <>
+      <h2>Apartado del header</h2>
       <HeaderInputs changeHeader={changeHeader}/>
       
-      <h3>Apartado de trabajo</h3>
-      
+      <h2>Apartado de trabajo</h2>
       {experienceData.map((e, i) => (
         <div key={e.key}>
+
           <h3>Experience #{i + 1}</h3>
+        
           <JobInputs 
             changeData={changeExperience} 
             changeBullet={changeExperienceBullet} 
@@ -106,12 +175,29 @@ export default function AllTheInputs(
           />
 
           <button onClick={e => addBullet(experienceData[i].key)}>Agregar bullet</button>
-
+        
         </div>
       ))}
-
-      <h3>Seccion boton de prueba</h3>
       <button onClick={addExperience}>Agregar Experiencia</button>
+
+      <h2>Apartado de educacion</h2>
+      {educationData.map((e, i) => (
+        <div key={e.key}>
+
+          <h3>aña #{i + 1}</h3>
+          
+          <EducationInputs 
+            changeData={changeEducation} 
+            changeBullet={changeEducationBullet} 
+            data={educationData} idx={i}
+          />
+
+          <button onClick={e => addEducationBullet(educationData[i].key)}>certificate</button>
+        
+        </div>
+      ))}
+      <button onClick={addEducation}>add education</button>
+
     </>
   )
 }
