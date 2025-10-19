@@ -1,8 +1,10 @@
 import HeaderInputs from "./forms/headerForm.jsx";
 import JobInputs from "./forms/jobForm.jsx";
 import EducationInputs from "./forms/educationForm.jsx";
+import SkillInputs from "./forms/skillsForm.jsx";
 import {changeExperience, changeExperienceBullet, addExperience, addBullet} from "./logic/jobInputFunctions.js"
 import {changeEducation, changeEducationBullet, addEducation, addEducationBullet } from "./logic/educationFunctions.js";
+import { changeSkills, addSkill } from "./logic/skillsFunctions.js";
 
 
 export default function AllTheInputs(
@@ -27,9 +29,11 @@ export default function AllTheInputs(
 
   return (
     <>
+    {/*//*  ---------------- HEADER FIELDS ----------------- */}
       <h2>Apartado del header</h2>
       <HeaderInputs changeHeader={changeHeader}/>
       
+    {/*//*  ---------------- JOB FIELDS ----------------- */}
       <h2>Apartado de trabajo</h2>
       {experienceData.map((e, i) => (
         <div key={e.key}>
@@ -49,6 +53,7 @@ export default function AllTheInputs(
       ))}
       <button onClick={e => addExperience(e, setExperience)}>Agregar Experiencia</button>
 
+    {/*//*  ---------------- EDUCATION FIELDS ----------------- */}
       <h2>Apartado de educacion</h2>
       {educationData.map((e, i) => (
         <div key={e.key}>
@@ -68,6 +73,15 @@ export default function AllTheInputs(
       ))}
       <button onClick={e => addEducation(e, setEducation)}>add education</button>
 
+    {/*//*  ---------------- SKILL FIELDS ----------------- */}
+      <h2>Skills</h2>
+      <SkillInputs 
+        changeData={changeSkills}
+        data={skillsData}
+        state={setSkills}
+      />
+
+      <button onClick={e => addSkill(e, setSkills)}>add skill</button>
     </>
   )
 }
