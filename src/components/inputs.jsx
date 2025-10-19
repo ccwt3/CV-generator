@@ -1,6 +1,6 @@
-import HeaderInputs from "./input_components/headerInputs";
-import JobInputs from "./input_components/jobInputs";
-import EducationInputs from "./input_components/educationInputs";
+import HeaderInputs from "./forms/headerForm.jsx";
+import JobInputs from "./forms/jobForm.jsx";
+import EducationInputs from "./forms/educationForm.jsx";
 import {changeExperience, changeExperienceBullet, addExperience, addBullet} from "./logic/jobInputFunctions.js"
 import {changeEducation, changeEducationBullet, addEducation, addEducationBullet } from "./logic/educationFunctions.js";
 

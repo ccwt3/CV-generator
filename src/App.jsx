@@ -4,10 +4,10 @@ import "./App.css";
 import "./styles/experience.css"
 import "./styles/education.css"
 // components
-import HeaderInfo from "./components/header";
-import Experience from "./components/experience";
-import Education from "./components/education";
-import Skills from "./components/skills";
+import HeaderInfo from "./components/cv/header";
+import Experience from "./components/cv/experience";
+import Education from "./components/cv/education";
+import Skills from "./components/cv/skills";
 import AllTheInputs from "./components/inputs";
 
 function App() {
