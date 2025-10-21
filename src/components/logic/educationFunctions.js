@@ -1,33 +1,16 @@
+import { updateItem, updateNestedItem, addNestedItem } from "./sharedFunctions";
 export {changeEducation, changeEducationBullet, addEducation, addEducationBullet}
 
 function changeEducation(event, id, setState) {
-  setState(prev => prev.map(exp =>
-      exp.key === id 
-      ? {...exp, [event.target.name]: event.target.value}
-      : exp
-    )
-  );
+  updateItem(event, id, setState);
 }
 
 function changeEducationBullet(event, id, bulletID, setState) {
-  setState(prev => prev.map(exp => {
-    if (exp.key === id) {
-      return {
-        ...exp,
-        certifications: exp.certifications.map(bul => {
-          if (bul.key === bulletID) {
-            return {...bul, text: event.target.value}
-          }
-          else {
-            return bul;
-          }
-        })
-      };
-    }
-    else {
-      return exp;
-    }
-  }));
+  updateNestedItem(event, id, bulletID, setState, 'certifications');
+}
+
+function addEducationBullet(id, setState) {
+  addNestedItem(id, setState, 'certifications');
 }
 
 function addEducation(e, setState) {
@@ -43,24 +26,4 @@ function addEducation(e, setState) {
       certifications: [],
     }
   ]);
-}
-
-function addEducationBullet(id, setState) {
-  setState(prev => prev.map(exp => {
-    if (exp.key === id) {
-      return {
-        ...exp,
-        certifications: [
-          ...exp.certifications,
-          {
-            key: crypto.randomUUID(),
-            text: 'set info',
-          }
-        ]
-      };
-    }
-    else {
-      return exp;
-    }
-  }));
 }

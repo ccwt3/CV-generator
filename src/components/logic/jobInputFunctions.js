@@ -1,33 +1,16 @@
+import { updateItem, updateNestedItem, addNestedItem } from "./sharedFunctions";
 export {changeExperience, changeExperienceBullet, addExperience, addBullet}
 
 function changeExperience(event, id, setState) {
-  setState(prev => prev.map(exp =>
-      exp.key === id 
-      ? {...exp, [event.target.name]: event.target.value}
-      : exp
-    )
-  );
+  updateItem(event, id, setState);
 }
 
 function changeExperienceBullet(event, id, bulletID, setState) {
-  setState(prev => prev.map(exp => {
-    if (exp.key === id) {
-      return {
-        ...exp,
-        bullet: exp.bullet.map(bul => {
-          if (bul.key === bulletID) {
-            return {...bul, text: event.target.value}
-          }
-          else {
-            return bul;
-          }
-        })
-      };
-    }
-    else {
-      return exp;
-    }
-  }));
+  updateNestedItem(event, id, bulletID, setState, 'bullet');
+}
+
+function addBullet(id, setState) {
+  addNestedItem(id, setState, 'bullet');
 }
 
 function addExperience(e, setState) {
@@ -43,24 +26,4 @@ function addExperience(e, setState) {
       bullet: [],
     }
   ]);
-}
-
-function addBullet(id, setState) {
-  setState(prev => prev.map(exp => {
-    if (exp.key === id) {
-      return {
-        ...exp,
-        bullet: [
-          ...exp.bullet,
-          {
-            key: crypto.randomUUID(),
-            text: 'set info',
-          }
-        ]
-      };
-    }
-    else {
-      return exp;
-    }
-  }));
 }

@@ -1,9 +1,7 @@
-export function changeSkills(e, skill, setState) {
-  setState(prev => prev.map(s => 
-    s.key === skill.key ?
-    {...s, text: e.target.value} 
-    : s
-  ))
+import { updateItem } from "./sharedFunctions"
+
+export function changeSkills(e, id, setState) {
+  updateItem(e, id, setState);
 }
 
 export function addSkill(e, setState) {
