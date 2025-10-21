@@ -2,8 +2,8 @@ import HeaderInputs from "./forms/headerForm.jsx";
 import JobInputs from "./forms/jobForm.jsx";
 import EducationInputs from "./forms/educationForm.jsx";
 import SkillInputs from "./forms/skillsForm.jsx";
-import {changeExperience, changeExperienceBullet, addExperience, addBullet} from "./logic/jobInputFunctions.js"
-import {changeEducation, changeEducationBullet, addEducation, addEducationBullet } from "./logic/educationFunctions.js";
+import {changeExperience, changeExperienceBullet, addExperience, addBullet, deleteExperience} from "./logic/jobInputFunctions.js"
+import {changeEducation, changeEducationBullet, addEducation, addEducationBullet, deleteEducation } from "./logic/educationFunctions.js";
 import { changeSkills, addSkill } from "./logic/skillsFunctions.js";
 
 
@@ -48,7 +48,8 @@ export default function AllTheInputs(
           />
 
           <button onClick={e => addBullet(experienceData[i].key, setExperience)}>Agregar bullet</button>
-        
+          
+          <button onClick={e => deleteExperience(experienceData[i].key, setExperience)}>Eliminar Experiencia</button>
         </div>
       ))}
       <button onClick={e => addExperience(e, setExperience)}>Agregar Experiencia</button>
@@ -68,7 +69,8 @@ export default function AllTheInputs(
           />
 
           <button onClick={e => addEducationBullet(educationData[i].key, setEducation)}>certificate</button>
-        
+          
+          <button onClick={e => deleteEducation(educationData[i].key, setEducation)}>Delete education</button>
         </div>
       ))}
       <button onClick={e => addEducation(e, setEducation)}>add education</button>

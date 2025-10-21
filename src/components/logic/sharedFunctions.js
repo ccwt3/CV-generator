@@ -1,4 +1,4 @@
-export {updateItem, updateNestedItem, addNestedItem}
+export {updateItem, updateNestedItem, addNestedItem, deleteItem}
 
 function updateItem(event, id, setState) {
     setState(prev => prev.map(exp =>
@@ -51,3 +51,14 @@ function addNestedItem(id, setState, key) {
     }
   }));
 }
+
+function deleteItem(id, setState) {
+  setState(prev => prev.filter(item => item.key !== id));
+}
+
+
+
+/*//! Cosas por hacer
+//todo 2. Add delete nested item function
+//todo 3. Re-factor the classes and divs of ALL THE COMPONENTS (keys and classes)
+*/
