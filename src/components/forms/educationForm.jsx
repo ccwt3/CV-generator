@@ -1,15 +1,20 @@
+import { deleteEducationBullet } from "../logic/educationFunctions";
+
 function RenderingInputs({ changer, data, generalID, set }) {
   const certification = data[generalID]?.certifications ?? [];
   
   return certification.map(cert => {
     return (
-      <input
-        key={cert.key}
+      <div key={cert.key}>
+        <input
         type="text"
         name="certifications"
         placeholder="Dinamicos"
         onChange={e => changer(e, data[generalID].key, cert.key, set)}
-      />
+        />
+
+        <button onClick={e => deleteEducationBullet(data[generalID].key, cert.key, set)}>D</button>
+      </div>
     )
   });
 }

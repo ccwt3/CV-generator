@@ -1,5 +1,5 @@
-import { updateItem, updateNestedItem, addNestedItem, deleteItem } from "./sharedFunctions";
-export {changeEducation, changeEducationBullet, addEducation, addEducationBullet, deleteEducation}
+import { updateItem, updateNestedItem, addNestedItem, deleteItem, deleteNestedItem } from "./sharedFunctions";
+export {changeEducation, changeEducationBullet, addEducation, addEducationBullet, deleteEducation, deleteEducationBullet}
 
 function changeEducation(event, id, setState) {
   updateItem(event, id, setState);
@@ -15,6 +15,10 @@ function addEducationBullet(id, setState) {
 
 function deleteEducation(id, setState) {
   deleteItem(id, setState);
+}
+
+function deleteEducationBullet(id, bulletID, setState) {
+  deleteNestedItem(id, bulletID, setState, 'certifications');
 }
 
 function addEducation(e, setState) {

@@ -1,5 +1,5 @@
-import { updateItem, updateNestedItem, addNestedItem, deleteItem } from "./sharedFunctions";
-export {changeExperience, changeExperienceBullet, addExperience, addBullet, deleteExperience}
+import { updateItem, updateNestedItem, addNestedItem, deleteItem, deleteNestedItem } from "./sharedFunctions";
+export {changeExperience, changeExperienceBullet, addExperience, addBullet, deleteExperience, deleteExperienceBullet}
 
 function changeExperience(event, id, setState) {
   updateItem(event, id, setState);
@@ -15,6 +15,10 @@ function addBullet(id, setState) {
 
 function deleteExperience(id, setState) {
   deleteItem(id, setState);
+}
+
+function deleteExperienceBullet(id, bulletID, setState) {
+  deleteNestedItem(id, bulletID, setState, 'bullet');
 }
 
 function addExperience(e, setState) {

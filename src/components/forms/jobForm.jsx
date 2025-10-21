@@ -1,15 +1,20 @@
+import { deleteExperienceBullet } from "../logic/jobInputFunctions";
+
 function RenderingInputs({ changer, data, generalID, set }) {
   const bullets = data[generalID]?.bullet ?? [];
   
   return bullets.map(bul => {
     return (
-      <input
-        key={bul.key}
+      <div key={bul.key}>
+        <input
         type="text"
         name="bullet"
         placeholder="Dinamicos"
         onChange={e => changer(e, data[generalID].key, bul.key, set)}
-      />
+        />
+
+        <button onClick={e => deleteExperienceBullet(data[generalID].key, bul.key, set)}>Delete</button>
+      </div>
     )
   });
 }
