@@ -13,32 +13,32 @@ function ListFragment(bulletList) {
 function SchoolFragment(e) {
   e = e.data;
   return (
-    <>
-      <div className="education__info">
+    <div className="CV__education_bundle">
+      <div className="CV__education_info">
 
-        <div className="school-major">
+        <div className="CV__education_info_one">
           <p>{e.institution}</p>
           <p>{e.major}</p>
         </div>
 
-        <div className="place-time">
+        <div className="CV__education_info_two">
           <p>{e.place}</p>
           <p>{e.gen}</p>
         </div>
 
-        <ul className="education__list">
+        <ul className="CV__education_list">
           <ListFragment data={e.certifications} />
         </ul>
 
       </div>
-    </>
+    </div>
   )
 }
 
 export default function Education( {data} ) {
   
   return (
-    <div className="education">
+    <div className="CV__education">
       <h2>Education</h2>
       {
         data.map(school => <SchoolFragment data={school} key={school.key}/>)

@@ -5,7 +5,7 @@ function RenderingInputs({ changer, data, generalID, set }) {
   
   return certification.map(cert => {
     return (
-      <div key={cert.key}>
+      <div className="forms__education_dinamic_input" key={cert.key}>
         <input
         type="text"
         name="certifications"
@@ -13,7 +13,7 @@ function RenderingInputs({ changer, data, generalID, set }) {
         onChange={e => changer(e, data[generalID].key, cert.key, set)}
         />
 
-        <button onClick={e => deleteEducationBullet(data[generalID].key, cert.key, set)}>D</button>
+        <button className="forms__education_button forms--delete_dinamic" onClick={e => deleteEducationBullet(data[generalID].key, cert.key, set)}>D</button>
       </div>
     )
   });
@@ -21,7 +21,7 @@ function RenderingInputs({ changer, data, generalID, set }) {
 
 export default function EducationInputs( {changeData, changeBullet, data, idx, setter} ) {
   return (
-    <>
+    <div className="forms__education_inputs">
       <input type="text" name="institution" onChange={e => changeData(e, data[idx].key, setter)} />
       
       <input type="text" name="place" onChange={e => changeData(e, data[idx].key, setter)} />
@@ -31,6 +31,6 @@ export default function EducationInputs( {changeData, changeBullet, data, idx, s
       <input type="text" name="gen" onChange={e => changeData(e, data[idx].key, setter)} />
 
       <RenderingInputs changer={changeBullet} data={data} generalID={idx} set={setter}/>
-    </>
+    </div>
   )
 }

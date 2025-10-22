@@ -7,9 +7,9 @@ function List (text) {
 
 export default function Skills ( {data} ) {
   return (
-    <div className="skills">
+    <div className="CV__skills">
       <h2>Extra skills</h2>
-      <ul>
+      <ul className="CV__skills_list">
         {
           data.map(e => <List key={e.key} data={e.text} />)
         }

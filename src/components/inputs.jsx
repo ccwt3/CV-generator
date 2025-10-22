@@ -28,7 +28,7 @@ export default function AllTheInputs(
   }
 
   return (
-    <>
+    <aside className="forms">
     {/*//*  ---------------- HEADER FIELDS ----------------- */}
       <h2>Apartado del header</h2>
       <HeaderInputs changeHeader={changeHeader}/>
@@ -36,7 +36,7 @@ export default function AllTheInputs(
     {/*//*  ---------------- JOB FIELDS ----------------- */}
       <h2>Apartado de trabajo</h2>
       {experienceData.map((e, i) => (
-        <div key={e.key}>
+        <section key={e.key} className="forms__job_bundle">
 
           <h3>Experience #{i + 1}</h3>
         
@@ -47,17 +47,19 @@ export default function AllTheInputs(
             setter={setExperience}
           />
 
-          <button onClick={e => addBullet(experienceData[i].key, setExperience)}>Agregar bullet</button>
+          <button className="forms__job_button forms--add_dinamic" onClick={e => addBullet(experienceData[i].key, setExperience)}>Agregar bullet</button>
           
-          <button onClick={e => deleteExperience(experienceData[i].key, setExperience)}>Eliminar Experiencia</button>
-        </div>
+          <button className="forms__job_button forms--delete_job" onClick={e => deleteExperience(experienceData[i].key, setExperience)}>Eliminar Experiencia</button>
+        
+        </section>
       ))}
-      <button onClick={e => addExperience(e, setExperience)}>Agregar Experiencia</button>
+
+      <button className="forms__add_job_button" onClick={e => addExperience(e, setExperience)}>Agregar Experiencia</button>
 
     {/*//*  ---------------- EDUCATION FIELDS ----------------- */}
       <h2>Apartado de educacion</h2>
       {educationData.map((e, i) => (
-        <div key={e.key}>
+        <section className="forms__education_bundle" key={e.key}>
 
           <h3>aña #{i + 1}</h3>
           
@@ -68,12 +70,12 @@ export default function AllTheInputs(
             setter={setEducation}
           />
 
-          <button onClick={e => addEducationBullet(educationData[i].key, setEducation)}>certificate</button>
+          <button className="forms__education_button forms--add_dinamic" onClick={e => addEducationBullet(educationData[i].key, setEducation)}>certificate</button>
           
-          <button onClick={e => deleteEducation(educationData[i].key, setEducation)}>Delete education</button>
-        </div>
+          <button className="forms__education_button forms--delete_education" onClick={e => deleteEducation(educationData[i].key, setEducation)}>Delete education</button>
+        </section>
       ))}
-      <button onClick={e => addEducation(e, setEducation)}>add education</button>
+      <button className="forms__add_education_button" onClick={e => addEducation(e, setEducation)}>add education</button>
 
     {/*//*  ---------------- SKILL FIELDS ----------------- */}
       <h2>Skills</h2>
@@ -83,7 +85,7 @@ export default function AllTheInputs(
         state={setSkills}
       />
 
-      <button onClick={e => addSkill(e, setSkills)}>add skill</button>
-    </>
+      <button className="forms__add_skill_button" onClick={e => addSkill(e, setSkills)}>add skill</button>
+    </aside>
   )
 }

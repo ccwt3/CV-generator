@@ -112,10 +112,13 @@ function App() {
         skillsData={skills}
       />
 
-      <HeaderInfo data={headerData} />
-      <Experience data={experience} />
-      <Education data={education} />
-      <Skills data={skills} />
+      <main className="CV_preview">
+        <HeaderInfo data={headerData} />
+        <Experience data={experience} />
+        <Education data={education} />
+        <Skills data={skills} />
+      </main>
+      
     </>
   );
 }

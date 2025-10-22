@@ -1,17 +1,17 @@
 export default function HeaderInfo({data}) {
   
   return (
-    <section className="header">
+    <section className="CV__header">
       <h1>{data.name}</h1>
      
-      <div className="header__contact">
+      <div className="CV__header_contact">
         <p>{data.direction}</p>
-        <a>{data.linkedIn}</a>
+        <a href={data.linkedIn}>{data.linkedIn}</a>
         <p>{data.phone}</p>
         <p>{data.email}</p>
       </div>
 
-      <p className="header__description">{data.description}</p>
+      <p className="CV__header_description">{data.description}</p>
     </section>
   )
 }
