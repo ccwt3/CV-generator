@@ -1,3 +1,11 @@
+.CV_preview {
+  height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
 .CV_preview *{
   font-size: 11pt;
 }
@@ -17,6 +25,7 @@
 
 .CV__header_name h1 {
   margin: 5px;
+  font-size: 18pt;
 }
 
 .CV__header_contact {
@@ -43,10 +52,10 @@
 .CV__job_title_wrapper, .CV__education_title_wrapper, .CV__skills_title_wrapper {
   width: 100%;
   text-align: center;
-  border-bottom: 2px solid black;
+  /*border-bottom: 2px solid black;*/
 }
 
-.CV__jobs h2, .CV__education h2, .CV__slills h2 {
+.CV__jobs h2, .CV__education h2, .CV__skills h2 {
   margin: 0;
 }
 
@@ -67,6 +76,10 @@
 
 .CV__job_info_two, .CV__education_info_two {
   text-align: end;
+}
+
+.CV__job_list, .CV__education_list {
+  margin: 0;
 }
 
 /** skills*/

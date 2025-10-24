@@ -18,7 +18,7 @@ function App() {
   const [headerData, setHeaderData] = useState(
     {
       name: "Omar Alejandro Tlapa Esteban",
-      direction: "Veracruz, México",
+      direction: "México, Veracruz",
       linkedIn: "https://www.linkedin.com/in/oate/",
       phone: "111-1111-2222",
       email: "cacawat3gd@gmail.com",
@@ -32,8 +32,8 @@ function App() {
       key: crypto.randomUUID(),
       company: 'CV creator',
       position: 'Solo developer',
-      place: 'México',
-      period: 'September 2025 - September 2025',
+      place: 'México, Veracruz',
+      period: 'September 18, 2025 - October 24, 2025',
 
       bullet: [
         {
@@ -43,23 +43,13 @@ function App() {
         {
           key: crypto.randomUUID(),
           text: 'This project helped me learn how structure things'
+        },
+        {
+          key: crypto.randomUUID(),
+          text: 'It took me around a not coninuous month and 2 weeks to finish all of this'
         }
       ]
     },
-    {
-      key: crypto.randomUUID(),
-      company: 'CV Sexo',
-      position: 'Solo developer',
-      place: 'México',
-      period: 'September 2025 - September 2025',
-
-      bullet: [
-        {
-          key: crypto.randomUUID(),
-          text: 'Damn mami'
-        }
-      ]
-    }
   ])
 
   const [education, setEducation] = useState([
