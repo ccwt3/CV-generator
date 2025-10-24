@@ -1,0 +1,11 @@
+.forms__job_inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms__job_dinamic_input {
+  display: flex;
+  width: 100%;
+}
+

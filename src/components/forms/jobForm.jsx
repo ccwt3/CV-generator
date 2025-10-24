@@ -9,11 +9,10 @@ function RenderingInputs({ changer, data, generalID, set }) {
         <input
         type="text"
         name="bullet"
-        placeholder="Dinamicos"
         onChange={e => changer(e, data[generalID].key, bul.key, set)}
         />
 
-        <button className="forms__job_button forms--delete_dinamic" onClick={e => deleteExperienceBullet(data[generalID].key, bul.key, set)}>Delete</button>
+        <button className="forms__job_button forms--delete_dinamic" onClick={e => deleteExperienceBullet(data[generalID].key, bul.key, set)}>-</button>
       </div>
     )
   });
@@ -22,15 +21,32 @@ function RenderingInputs({ changer, data, generalID, set }) {
 export default function JobInputs( {changeData, changeBullet, data, idx, setter} ) {
   return (
     <div className="forms__job_inputs">
-      <input type="text" name="company" onChange={e => changeData(e, data[idx].key, setter)} />
-      
-      <input type="text" name="position" onChange={e => changeData(e, data[idx].key, setter)} />
-      
-      <input type="text" name="place" onChange={e => changeData(e, data[idx].key, setter)} />
-      
-      <input type="text" name="period" onChange={e => changeData(e, data[idx].key, setter)} />
 
-      <RenderingInputs changer={changeBullet} data={data} generalID={idx} set={setter}/>
+      <div className="forms__label-input">
+        <label htmlFor="job__company">Organization:</label>
+        <input type="text" name="company" id="job__company" onChange={e => changeData(e, data[idx].key, setter)} />
+      </div>
+      
+      <div className="forms__label-input">
+        <label htmlFor="job__position">Position title:</label>
+        <input type="text" name="position" id="job__position" onChange={e => changeData(e, data[idx].key, setter)} />
+      </div>
+      
+      <div className="forms__label-input">
+        <label htmlFor="job__city">City, Adress:</label>
+        <input type="text" name="place" onChange={e => changeData(e, data[idx].key, setter)} />
+      </div>
+      
+      <div className="forms__label-input">
+        <label htmlFor="job__period">Period:</label>
+        <input type="text" name="period" onChange={e => changeData(e, data[idx].key, setter)} />
+      </div>
+      
+      <div className="forms__label-input">
+        <label htmlFor="job__bullet">Bullet points:</label>
+        <RenderingInputs changer={changeBullet} data={data} generalID={idx} set={setter}/>
+      </div>
+      
     </div>
   )
 }

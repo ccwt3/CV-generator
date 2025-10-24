@@ -1,8 +1,11 @@
 import { useState } from "react";
 // styles
 import "./App.css";
-import "./styles/experience.css"
-import "./styles/education.css"
+import "./styles/components.css"
+import "./styles/forms/header.css"
+import "./styles/forms/job.css"
+import "./styles/forms/education.css"
+import "./styles/forms/skills.css"
 // components
 import HeaderInfo from "./components/cv/header";
 import Experience from "./components/cv/experience";

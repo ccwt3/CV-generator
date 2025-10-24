@@ -1,0 +1,11 @@
+.forms__skills_bundle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms__skills_dinamic_input {
+  width: 75%;
+  text-align: start;
+}
