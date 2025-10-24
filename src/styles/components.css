@@ -34,8 +34,10 @@
   padding: 5px 10px;
 }
 
-.CV__preview {
-  min-width: 50%;
+.CV_preview {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .forms section {
@@ -45,4 +47,8 @@
   padding: 1rem;
   border-radius: 1rem;
   margin: 10px;
+}
+
+.strong {
+  font-weight: bold;
 }

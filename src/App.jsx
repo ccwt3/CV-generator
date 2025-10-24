@@ -6,6 +6,7 @@ import "./styles/forms/header.css"
 import "./styles/forms/job.css"
 import "./styles/forms/education.css"
 import "./styles/forms/skills.css"
+import "./styles/CV/cv.css"
 // components
 import HeaderInfo from "./components/cv/header";
 import Experience from "./components/cv/experience";

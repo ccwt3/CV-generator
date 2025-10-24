@@ -18,12 +18,12 @@ function JobFragment(e) {
       <div className="CV__job_info">
         
         <div className="CV__job_info_one">
-          <p>{e.company}</p>
+          <p className="strong">{e.company}</p>
           <p>{e.position}</p>
         </div>
     
         <div className="CV__job_info_two">
-          <p>{e.place}</p>
+          <p className="strong">{e.place}</p>
           <p>{e.period}</p>
         </div>
       </div>
@@ -38,7 +38,10 @@ function JobFragment(e) {
 export default function Experience( {data} ) {
   return (
     <section className="CV__jobs">
-      <h2>Job experience</h2>
+      <div className="CV__job_title_wrapper">
+        <h2 className="strong">Job experience</h2>
+      </div>
+
       {
         data.map((job) => <JobFragment data={job} key={job.key}/>)
       }

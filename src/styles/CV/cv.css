@@ -1,0 +1,75 @@
+.CV_preview *{
+  font-size: 11pt;
+}
+
+.CV__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.CV__header_name {
+  width: 80%;
+  border-bottom: 2px solid black;
+}
+
+.CV__header_name h1 {
+  margin: 5px;
+}
+
+.CV__header_contact {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.CV__header_description {
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+/** JOB and education -------------------*/
+
+.CV__jobs, .CV__education, .CV__skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CV__job_title_wrapper, .CV__education_title_wrapper, .CV__skills_title_wrapper {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.CV__jobs h2, .CV__education h2, .CV__slills h2 {
+  margin: 0;
+}
+
+.CV__job_bundle, .CV__education_bundle {
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.CV__job_info, .CV__education_info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CV__job_info p, .CV__education_info p {
+  margin: 5px;
+}
+
+.CV__job_info_two, .CV__education_info_two {
+  text-align: end;
+}
+
+/** skills*/
+.CV__skills_list {
+  align-self: flex-start;
+}

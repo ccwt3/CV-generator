@@ -17,20 +17,20 @@ function SchoolFragment(e) {
       <div className="CV__education_info">
 
         <div className="CV__education_info_one">
-          <p>{e.institution}</p>
+          <p className="strong">{e.institution}</p>
           <p>{e.major}</p>
         </div>
 
         <div className="CV__education_info_two">
-          <p>{e.place}</p>
+          <p className="strong">{e.place}</p>
           <p>{e.gen}</p>
         </div>
 
-        <ul className="CV__education_list">
-          <ListFragment data={e.certifications} />
-        </ul>
-
       </div>
+
+      <ul className="CV__education_list">
+        <ListFragment data={e.certifications} />
+      </ul>
     </div>
   )
 }
@@ -39,7 +39,10 @@ export default function Education( {data} ) {
   
   return (
     <div className="CV__education">
-      <h2>Education</h2>
+      <div className="CV__education_title_wrapper">
+        <h2>Education</h2>
+      </div>
+      
       {
         data.map(school => <SchoolFragment data={school} key={school.key}/>)
       }
